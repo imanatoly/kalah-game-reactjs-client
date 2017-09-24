@@ -1,0 +1,63 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.Board {
+    text-align:center;
+}
+
+.Board table {
+    margin: auto;
+    padding: 30px;
+ 	background-image: url(img/board.png);
+ 	background-size: 100% 100%;
+}
+
+.Slot, .Cell, .Kalah {
+  	color: #cc6;
+  	padding:30px;
+}
+
+.Slot span {
+}
+
+.Kalah {
+  	margin:10px;
+ 	background-image: url(img/kalah.png);
+ 	background-size: 100% 100%;
+ 	background-repeat: none;
+ 	height:60px;
+ 	width:20px;
+
+}
+
+.Slot , .Cell {
+  	margin:5px;
+ 	background-image: url(img/cell.png);
+ 	background-size: 100% 100%;
+ 	background-repeat: none;
+ 	width:20px;
+ 	height:20px;
+}
+
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
