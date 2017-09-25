@@ -2,6 +2,28 @@
   text-align: center;
 }
 
+.App-menu {
+    padding: 40px;
+}
+
+.App-menu button {
+    border-radius: 20px;
+    text-shadow: 1px 1px 4px #ccc;
+    color: #7bc;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 10px 20px 10px 20px;
+    border: solid #9ce 5px;
+    background: #ffffff;
+    text-decoration: none;
+}
+
+.App-menu button:hover {
+    color: #398;
+    background: #ffffee;
+    border: solid #5ab 5px;
+}
+
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
@@ -16,6 +38,11 @@
 
 .App-intro {
   font-size: large;
+}
+
+.App-error {
+    font-size: large;
+    color: red;
 }
 
 .Board {
@@ -52,9 +79,10 @@
  	background-image: url(img/cell.png);
  	background-size: 100% 100%;
  	background-repeat: none;
- 	width:20px;
- 	height:20px;
+ 	width:40px;
+ 	height:40px;
 }
+
 
 
 @keyframes App-logo-spin {

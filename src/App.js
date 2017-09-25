@@ -101,10 +101,10 @@ class WelcomeScreen extends Component {
             <div className="App">
                 <div className="App-header">
                     <img src={logo} className="App-logo" alt="logo"/>
-                    <h2>Welcome</h2>
+                    <h2>Kalah Game</h2>
                 </div>
-                <div>
-                    <button onClick={this.props.doJoin}>New Game</button>
+                <div className="App-menu">
+                    <button onClick={this.props.doJoin}>Start</button>
                 </div>
             </div>
         );
@@ -139,31 +139,42 @@ class App extends Component {
 		var client = rest.wrap(mime, { mime: 'application/json' }).wrap(entity);
     	client({ path: 'http://localhost:8080/api/kalah/join'})
         	.done(response => {
-        		console.log(response);
+                console.log(response);
+                console.log(response.error);
         		console.log(response.id);
     			this.setState({
-    				page: Page.GAME,
-					game: {
-						ownScore: 0,
-						ownSlots: [6,6,6,6,6,6],
-						opponentSlots: [6,6,6,6,6,6],
-						opponentScore: 0
-					},
-    				playerId: response.id
-
-    			});
-    		});
+                    page: Page.GAME,
+                    game: {
+                        ownScore: 0,
+                        ownSlots: [6, 6, 6, 6, 6, 6],
+                        opponentSlots: [6, 6, 6, 6, 6, 6],
+                        opponentScore: 0
+                    },
+                    playerId: response.id
+                    });
+            }, e => {
+                console.log('response error: ', e);
+                this.setState({
+                    page: Page.WELCOME,
+                    error: 'Cannot connect to server'
+                });
+            }
+            );
     }
 
     render() {
-        const page = this.state.page;
-        if (page === Page.GAME) {
-            return (<GameScreen game={this.state.game}/>)
-        } else if (page === Page.ENDGAME) {
-            return (<EndgameScreen/>)
-        } else {
-            return (<WelcomeScreen doJoin={this.join}/>)
+        let currentComponent = null;
+        switch (this.state.page) {
+            case Page.GAME   : currentComponent = <GameScreen game={this.state.game}/>; break;
+            case Page.ENDGAME: currentComponent = <EndgameScreen/>; break;
+            default          : currentComponent = <WelcomeScreen doJoin={this.join}/>;
         }
+        return (
+            <div className="App">
+                {currentComponent}
+                <div className="App-error">{this.state.error}</div>
+            </div>
+        );
     }
 }
 
