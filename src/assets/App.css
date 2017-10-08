@@ -1,0 +1,84 @@
+.App {
+  text-align: center;
+}
+
+.App-menu {
+  padding: 40px;
+}
+
+.App-menu button {
+	border-radius: 20px;
+	text-shadow: 1px 1px 4px #ccc;
+	color: #7bc;
+	font-size: 28px;
+	font-weight: bold;
+	padding: 10px 20px 10px 20px;
+	border: solid #9ce 5px;
+	background: #ffffff;
+	text-decoration: none;
+}
+
+.App-menu button:hover {
+	color: #398;
+	background: #ffffee;
+	border: solid #5ab 5px;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.App-error {
+	font-size: large;
+	color: red;
+}
+
+.Board {
+	margin-top:50px;
+	text-align:center;
+}
+
+.Board table {
+	margin: auto;
+	padding: 20px;
+ 	background-color: #966;
+ 	border-radius: 30px;
+	border-bottom: solid #632 20px;
+}
+
+.Kalah {
+	margin:10px;
+ 	height:60px;
+	background-color: #866;
+}
+
+.Slot, .Cell {
+  margin:5px;
+	height:25px;
+}
+
+.Slot, .Cell, .Kalah {
+	padding:30px;
+	width: 20px;
+	color:#ffffaa;
+	background-color: #744;
+	border-radius: 20px;
+	border-top: solid #632 10px;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
